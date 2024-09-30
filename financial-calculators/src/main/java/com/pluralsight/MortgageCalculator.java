@@ -14,7 +14,7 @@ public class MortgageCalculator {
     }
 
     public double getMonthlyPayment() {
-        double monthlyPayment = principal * (monthlyInterestRate / (1 - Math.pow((1 + monthlyInterestRate), -1 * loanLengthInMonths)));
+        double monthlyPayment = principal * (monthlyInterestRate / (1 - Math.pow((1 + monthlyInterestRate), -loanLengthInMonths)));
         return monthlyPayment;
     }
 
