@@ -7,6 +7,12 @@ public class CDValueCalculator {
     private int years;
     private int numberOfCompoundsPerYear;
 
+    /**
+     * Constructs the certificate of deposit calculator given the inputs passed from Main.main()
+     * @param deposit
+     * @param annualInterestRate
+     * @param years
+     */
     public CDValueCalculator(int deposit, double annualInterestRate, int years) {
         this.deposit = deposit;
         this.annualInterestRate = annualInterestRate / 100;
@@ -24,11 +30,19 @@ public class CDValueCalculator {
         t is time, or the number of years until the maturity date.
      */
 
+    /**
+     * Returns the future value of a certificate of deposit
+     * @return future value of CD
+     */
     public double getFutureValue() {
         double futureValue = deposit * Math.pow((1 + annualInterestRate / numberOfCompoundsPerYear), numberOfCompoundsPerYear * years);
         return futureValue;
     }
 
+    /**
+     * Returns the total interest that will be gained in the future in interest
+     * @return interest accrued from the CD
+     */
     public double getInterestAccrued() {
         return getFutureValue() - deposit;
     }
